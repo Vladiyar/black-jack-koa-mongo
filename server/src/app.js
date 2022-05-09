@@ -9,10 +9,10 @@ const niv = require('node-input-validator');
 const mongoose = require("mongoose");
 
 const app = new Koa();
-const LOGIN = process.env.LOGIN;
-const PASSWORD = process.env.PASSWORD;
-const HOST = process.env.HOST;
-const ROUTE = process.env.ROUTE;
+const LOGIN = process.env.MONGO_LOGIN;
+const PASSWORD = process.env.MONGO_PASSWORD;
+const HOST = process.env.MONGO_HOST;
+const ROUTE = process.env.MONGO_ROUTE;
 
 app.use(cors())
 app.use(koaBody());
