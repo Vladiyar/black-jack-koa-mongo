@@ -9,8 +9,10 @@ const niv = require('node-input-validator');
 const mongoose = require("mongoose");
 
 const app = new Koa();
-const MONGO_LOGIN = process.env.MONGO_LOGIN;
-const MONGO_PASSWORD = process.env.MONGO_PASSWORD;
+const LOGIN = process.env.LOGIN;
+const PASSWORD = process.env.PASSWORD;
+const HOST = process.env.HOST;
+const ROUTE = process.env.ROUTE;
 
 app.use(cors())
 app.use(koaBody());
@@ -22,7 +24,7 @@ app.use(serve(path.join(__dirname + '/static')));
 
 async function start() {
     try {
-        await mongoose.connect('mongodb+srv://' + MONGO_LOGIN + ':' + MONGO_PASSWORD + '@cluster0.6n1wt.mongodb.net/blackJack?retryWrites=true&w=majority', {
+        await mongoose.connect(HOST + LOGIN + ':' + PASSWORD + ROUTE, {
             useNewUrlParser: true,
             // useFindAndModify: false
         })
