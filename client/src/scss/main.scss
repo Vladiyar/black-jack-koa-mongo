@@ -1,0 +1,219 @@
+.is-disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.active {
+    color: blue;
+    cursor: default;
+}
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 5px;
+
+        input {
+            margin: 5px;
+        }
+
+        button {
+            margin: 5px;
+        }
+
+        label {
+            font-size: 2em;
+        }
+    }
+}
+
+.open-window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    background-color: rgba(50, 95, 50, 0.9);
+    color: #fff;
+    font-size: 5.3em;
+    width: 90%;
+    height: 90%;
+    left: 5%;
+    top: 5%;
+    z-index: 1;
+
+    .play-again {
+        width: 200px;
+        height: 100px;
+        margin-top: 300px;
+        font-size: 0.5em;
+        border: 5px solid red;
+        &:hover {
+            background: rgb(106, 0, 255);
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+}
+.module-window {
+    display: none;
+
+
+}
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+
+    .loading {
+        font-size: 50px;
+        display: flex;
+        align-items: center;
+        margin-left: 40%;
+
+    }
+    .game-area {
+        display: flex;
+        width: 70%;
+        height: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+
+        @media only screen and (max-width: 800px) {
+            flex-direction: column;
+            width: 50%;
+
+        } 
+
+        .player {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            background-color: #ccc;
+            height: 300px;
+            width: 500px;
+            margin: 20px;
+            color: #000;
+            font-size: 3em;
+            border: 5px solid #575757;
+
+            @media only screen and (max-width: 800px) {
+                width: 200px;
+                font-size: 30px;
+
+                }
+
+            .player-name {
+                align-items: start;
+                margin-left: -90px;
+
+
+            }
+            .player-hand {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+
+                @media only screen and (max-width: 800px) {
+                    width: 200px;
+
+
+
+                }
+
+
+                .card {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    background-color: #fff;
+                    border-radius: 5px;
+                    height: 100px;
+                    width: 75px;
+                    font-size: 30px;
+                    margin-right: 10px;
+
+                    :first-child {
+                        margin-right: 40px;
+                    }
+                    :last-child {
+                        transform: rotate(180deg);
+                        margin-left: 40px;
+                    }
+
+                    .classColorRed {
+                        color: red;
+                    }
+
+                }
+            }
+
+            .player-score {
+
+            }
+
+
+        }
+        .active {
+            border-color: green;
+            box-shadow: 0 0 20px green;
+        }
+
+        .lost {
+            border-color: red;
+        }
+
+    }
+    .sidebar {
+        display: flex;
+        position: fixed;
+        right: 0;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        height: 98%;
+        flex-direction: column;
+        border: 5px solid green;
+
+        @media only screen and (max-width: 800px) {
+            align-items: baseline;
+            border: none;   
+            right: 20px;
+        }
+
+        .card-back {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            height: 200px;
+            width: 150px;
+            background-image: url("../images/card-back.png");
+            background-size: cover;
+            
+
+
+        }
+
+        .button {
+            height: 30px;
+            width: 150px;
+        }
+        button:first-of-type {
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+
+    }
+}
